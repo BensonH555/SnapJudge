@@ -1,0 +1,37 @@
+model:
+  name: Qwen/Qwen3.5-27B
+  revision: fc05daec18b0a78c049392ed2e771dde82bdf654
+
+data:
+  path: Benson555/SnapJudge
+  config: latex
+  window: 512
+  stride: 256
+
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  output_dir: checkpoints/latex
+  learning_rate: 1.0e-4
+  per_device_train_batch_size: 4
+  effective_batch_size: 16
+  num_train_epochs: 3
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  logging_steps: 100
+  dataloader_num_workers: 2
+  seed: 42
+
+inference:
+  batch_size: 64

@@ -1,0 +1,19 @@
+torch==2.13.0
+torchvision==0.28.0
+transformers==5.14.1
+peft==0.21.2
+accelerate==1.14.0
+datasets==5.0.1
+safetensors==0.8.0
+tokenizers==0.22.2
+huggingface_hub==1.27.0
+flash-linear-attention==0.5.2
+fla-core==0.5.2
+triton==3.7.1
+numpy==2.5.1
+pandas==3.0.5
+scikit-learn==1.9.0
+scipy==1.18.0
+pillow==12.3.0
+pyyaml==6.0.3
+# Do not install causal-conv1d: it changes the Qwen3.5 kernels and the scores.
